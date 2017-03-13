@@ -1,4 +1,4 @@
-﻿namespace AppHost
+﻿namespace DevelopRecordPlatform
 {
     partial class Form1
     {
