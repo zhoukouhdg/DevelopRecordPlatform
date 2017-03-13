@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace DevelopRecordPlatform
+namespace AppHost
 {
     public partial class Form1 : Form
     {
