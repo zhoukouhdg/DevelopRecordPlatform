@@ -44,7 +44,7 @@
     <Compile Include="frmSetFlightAlarmTool.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSetFlightAlarmTool.Designer.cs">
+    <Compile Include="frmSetFlightAlarmTool.designer.cs">
       <DependentUpon>frmSetFlightAlarmTool.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
