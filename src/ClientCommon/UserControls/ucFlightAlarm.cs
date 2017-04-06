@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DevelopRecordPlatform.Model;
+using DevelopRecordPlatform.BusinessLogical.BLL;
 
 namespace DevelopRecordPlatform.Client.Common.UserControls
 {
@@ -180,6 +181,21 @@ namespace DevelopRecordPlatform.Client.Common.UserControls
                 StartAlert();
             }
             this.AlarmDetail = alarmDetail;
+        }
+
+        private void btnConfirmAllAlarm_Click(object sender, EventArgs e)
+        {
+            new Action(() => FlightAlertManager.Instance.ConfirmAllFlightAlarm(this.AlarmDetail.FlightInfoID)).BeginInvoke(new AsyncCallback((ar) =>
+            {
+                this.Invoke(new Action(() =>
+                {
+                    AlarmTagCache.AlarmTotal.Unconfirmed = 0;
+                    AlarmTagCache.IsAlarm = false;
+
+                    this.lbFuelAlert.Text = AlarmTagCache.AlarmTotal.ToString();
+                    SetAlarmLabelStyle(false);
+                }));
+            }), null);
         }
     }
 

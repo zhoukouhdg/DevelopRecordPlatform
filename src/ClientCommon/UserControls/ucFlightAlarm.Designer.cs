@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbFuelAlert = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnConfirmAllAlarm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbFlightFullNo
@@ -77,11 +78,22 @@
             this.label5.TabIndex = 71;
             this.label5.Text = "告警：";
             // 
+            // btnConfirmAllAlarm
+            // 
+            this.btnConfirmAllAlarm.Location = new System.Drawing.Point(154, 11);
+            this.btnConfirmAllAlarm.Name = "btnConfirmAllAlarm";
+            this.btnConfirmAllAlarm.Size = new System.Drawing.Size(95, 23);
+            this.btnConfirmAllAlarm.TabIndex = 73;
+            this.btnConfirmAllAlarm.Text = "确认所有告警";
+            this.btnConfirmAllAlarm.UseVisualStyleBackColor = true;
+            this.btnConfirmAllAlarm.Click += new System.EventHandler(this.btnConfirmAllAlarm_Click);
+            // 
             // ucFlightAlarm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.btnConfirmAllAlarm);
             this.Controls.Add(this.lbFuelAlert);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbFlightFullNo);
@@ -98,5 +110,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbFuelAlert;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnConfirmAllAlarm;
     }
 }
