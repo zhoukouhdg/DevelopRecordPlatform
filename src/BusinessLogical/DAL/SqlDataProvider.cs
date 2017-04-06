@@ -119,5 +119,15 @@ ON unconfirm.FlightInfoID = flight.FlightInfoID";
                 return l > 0;
             }
         }
+        public bool ConfirmAllFlightAlarm(int flightInfoId)
+        {
+
+            var sql = "UPDATE dbo.temp_TB_FlightAlert SET AlertStatus =1 WHERE FlightInfoID = @FlightInfoID";
+            using (SqlConnection conn = GetSqlConnection())
+            {
+                var l = SqlHelper.ExecuteNonQuery(conn, sql, CommandType.Text, new SqlParameter("@FlightInfoID", flightInfoId));
+                return l > 0;
+            }
+        }
     }
 }

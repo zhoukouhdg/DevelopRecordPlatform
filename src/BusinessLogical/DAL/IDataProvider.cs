@@ -14,5 +14,7 @@ namespace DevelopRecordPlatform.BusinessLogical.DAL
         bool AddOneFlightAlarm(int flightInfoId);
 
         bool CancelAllFlightAlarm(int flightInfoId);
+
+        bool ConfirmAllFlightAlarm(int flightInfoId);
     }
 }
