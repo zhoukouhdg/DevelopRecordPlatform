@@ -81,12 +81,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.lbFuelAlert);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbFlightFullNo);
             this.Controls.Add(this.label1);
             this.Name = "ucFlightAlarm";
-            this.Size = new System.Drawing.Size(380, 47);
+            this.Size = new System.Drawing.Size(378, 45);
             this.ResumeLayout(false);
 
         }

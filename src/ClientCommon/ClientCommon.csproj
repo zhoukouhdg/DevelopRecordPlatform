@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmSetFlightAlarmTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetFlightAlarmTool.Designer.cs">
+      <DependentUpon>frmSetFlightAlarmTool.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControls\ucFlightAlarm.cs">
       <SubType>UserControl</SubType>
@@ -50,9 +56,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmSetFlightAlarmTool.resx">
+      <DependentUpon>frmSetFlightAlarmTool.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucFlightAlarm.resx">
       <DependentUpon>ucFlightAlarm.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogical\BusinessLogical.csproj">
+      <Project>{f54ae1a0-c4b1-46ba-9d9a-090fbd7f171d}</Project>
+      <Name>BusinessLogical</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{7be5c667-44d6-405e-af05-385176dc3c00}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{957cce56-47ad-46ad-bcf5-13ccd384d33d}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
