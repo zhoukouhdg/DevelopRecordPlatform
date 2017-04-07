@@ -38,6 +38,13 @@ namespace DevelopRecordPlatform.Client.Common.UserControls
         /// </summary>
         public FlightAlarmDetail AlarmDetail { get; private set; }
 
+        public event EventHandler OrderAlarmPluginEvent; //组件排序事件 
+
+        /// <summary>
+        /// 组件的排序依据信息
+        /// </summary>
+        public FlightAlarmPluginOrderInfo OrderAccord { get; set; }
+
         #endregion
 
         #region ctor
@@ -173,6 +180,7 @@ namespace DevelopRecordPlatform.Client.Common.UserControls
         /// 更新当前航班信息
         /// </summary>
         /// <param name="alarmDetail"></param>
+        /// 
         public void UpdateAlarm(FlightAlarmDetail alarmDetail)
         {
             if (alarmDetail != null)
@@ -187,16 +195,21 @@ namespace DevelopRecordPlatform.Client.Common.UserControls
         {
             new Action(() => FlightAlertManager.Instance.ConfirmAllFlightAlarm(this.AlarmDetail.FlightInfoID)).BeginInvoke(new AsyncCallback((ar) =>
             {
+                //更新告警详情的值、重置样式、触发排序事件
                 this.Invoke(new Action(() =>
                 {
                     AlarmTagCache.AlarmTotal.Unconfirmed = 0;
                     AlarmTagCache.IsAlarm = false;
 
                     this.lbFuelAlert.Text = AlarmTagCache.AlarmTotal.ToString();
+                    this.AlarmDetail.AlarmTotal = AlarmTagCache.AlarmTotal;
+
                     SetAlarmLabelStyle(false);
+
+                    OrderAlarmPluginEvent.Invoke(this, null);
                 }));
             }), null);
-        }
+        }       
     }
 
     class AlertLabelTag

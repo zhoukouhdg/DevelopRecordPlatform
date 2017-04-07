@@ -21,7 +21,7 @@ namespace DevelopRecordPlatform.Client.Common
         public override string ToString()
         {
             return string.Format("航班：{0}({1})，索引：{2}，告警：{3}", this.FlightNo, this.FlightInfoId, this.Index, this.HasAlarm ? "是" : "否");
-        }
+        }       
     }
 
     /// <summary>
