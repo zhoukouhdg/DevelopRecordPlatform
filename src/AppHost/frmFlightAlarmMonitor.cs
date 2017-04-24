@@ -20,6 +20,15 @@ namespace AppHost
         /// </summary>
         private List<ucFlightAlarm> currentAlarmControl = null;
 
+        /// <summary>
+        /// “航班告警”组件闪烁委托
+        /// </summary>
+        /// <param name="state"></param>
+        private delegate void delegateFlightAlarmPluginBlink(bool state);
+        /// <summary>
+        /// “航班告警”组件闪烁事件
+        /// </summary>
+        private event delegateFlightAlarmPluginBlink flightAlarmPluginBlinkEvent;
 
         public frmFlightAlarmMonitor()
         {
@@ -33,6 +42,10 @@ namespace AppHost
             this.timer1.Interval = 5000;
             this.timer1.Enabled = true;
             this.timer1.Start();
+
+            this.timer2.Interval = 500;
+            this.timer2.Enabled = true;
+            this.timer2.Start();
 
             GetFlightAlertListAsync();
 
@@ -65,6 +78,7 @@ namespace AppHost
                          foreach (var id in delList)
                          {
                              var c = currentAlarmControl.Where(p => p.AlarmDetail.FlightInfoID == id).FirstOrDefault();
+                             flightAlarmPluginBlinkEvent -= c.BlinkEventMethod;//解除闪烁事件注册
                              currentAlarmControl.Remove(c);
                              this.flowLayoutPanel1.Controls.Remove(c);
                          }
@@ -76,6 +90,7 @@ namespace AppHost
                              {
                                  var c = new ucFlightAlarm(item);
                                  c.OrderAlarmPluginEvent += OrderAlarmPluginEvent;
+                                 flightAlarmPluginBlinkEvent += c.BlinkEventMethod;//绑定闪烁事件
                                  this.flowLayoutPanel1.Controls.Add(c);
                                  this.currentAlarmControl.Add(c);
                              }
@@ -222,5 +237,12 @@ namespace AppHost
         }
 
         #endregion
+        bool blink = false;
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            blink = !blink;
+            if (this.flightAlarmPluginBlinkEvent != null)
+                flightAlarmPluginBlinkEvent.Invoke(blink);
+        }
     }
 }
