@@ -38,7 +38,10 @@ namespace DevelopRecordPlatform.Client.Common.UserControls
         /// </summary>
         public FlightAlarmDetail AlarmDetail { get; private set; }
 
-        public event EventHandler OrderAlarmPluginEvent; //组件排序事件 
+        /// <summary>
+        /// 组件排序事件
+        /// </summary>
+        public event EventHandler OrderAlarmPluginEvent; 
 
         /// <summary>
         /// 组件的排序依据信息
@@ -82,14 +85,16 @@ namespace DevelopRecordPlatform.Client.Common.UserControls
             _timer.Interval = this.Interval;
             if (!this._timer.Enabled)
             {
-                _timer.Start();
+                // _timer.Start();
             }
         }
         void _timer_Tick(object sender, EventArgs e)
         {
+            var _b = (bool)sender;
             if (AlarmTagCache != null && AlarmTagCache.IsAlarm)
             {
-                if (AlarmTagCache.BlinkState)
+                //if (AlarmTagCache.BlinkState)
+                if (_b)
                 {
                     this.lbFuelAlert.BackColor = AlertColorRed;
                     this.lbFuelAlert.ForeColor = Color.Yellow;
@@ -105,6 +110,11 @@ namespace DevelopRecordPlatform.Client.Common.UserControls
             }
             if (!isHaveAlarmBlink)
                 StopAlert();
+        }
+
+        public void BlinkEventMethod(bool state)
+        {
+            _timer_Tick(state, null);
         }
         /// <summary>
         /// 停止
@@ -209,7 +219,7 @@ namespace DevelopRecordPlatform.Client.Common.UserControls
                     OrderAlarmPluginEvent.Invoke(this, null);
                 }));
             }), null);
-        }       
+        }
     }
 
     class AlertLabelTag
