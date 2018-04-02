@@ -42,7 +42,7 @@
             // 
             // txtCursorPosX
             // 
-            this.txtCursorPosX.Location = new System.Drawing.Point(80, 34);
+            this.txtCursorPosX.Location = new System.Drawing.Point(51, 21);
             this.txtCursorPosX.Name = "txtCursorPosX";
             this.txtCursorPosX.Size = new System.Drawing.Size(34, 21);
             this.txtCursorPosX.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             // txtCursorPosY
             // 
-            this.txtCursorPosY.Location = new System.Drawing.Point(138, 34);
+            this.txtCursorPosY.Location = new System.Drawing.Point(109, 21);
             this.txtCursorPosY.Name = "txtCursorPosY";
             this.txtCursorPosY.Size = new System.Drawing.Size(34, 21);
             this.txtCursorPosY.TabIndex = 1;
@@ -59,7 +59,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 39);
+            this.label1.Location = new System.Drawing.Point(28, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(17, 12);
             this.label1.TabIndex = 2;
@@ -68,7 +68,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(120, 39);
+            this.label2.Location = new System.Drawing.Point(91, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 12);
             this.label2.TabIndex = 3;
@@ -76,7 +76,7 @@
             // 
             // btnSetCursorPos
             // 
-            this.btnSetCursorPos.Location = new System.Drawing.Point(196, 34);
+            this.btnSetCursorPos.Location = new System.Drawing.Point(167, 21);
             this.btnSetCursorPos.Name = "btnSetCursorPos";
             this.btnSetCursorPos.Size = new System.Drawing.Size(140, 23);
             this.btnSetCursorPos.TabIndex = 4;
@@ -86,7 +86,7 @@
             // 
             // btnSimulateKeyBord
             // 
-            this.btnSimulateKeyBord.Location = new System.Drawing.Point(267, 127);
+            this.btnSimulateKeyBord.Location = new System.Drawing.Point(262, 72);
             this.btnSimulateKeyBord.Name = "btnSimulateKeyBord";
             this.btnSimulateKeyBord.Size = new System.Drawing.Size(135, 54);
             this.btnSimulateKeyBord.TabIndex = 5;
@@ -96,7 +96,7 @@
             // 
             // txtSimulateContentBefore
             // 
-            this.txtSimulateContentBefore.Location = new System.Drawing.Point(138, 124);
+            this.txtSimulateContentBefore.Location = new System.Drawing.Point(133, 69);
             this.txtSimulateContentBefore.Name = "txtSimulateContentBefore";
             this.txtSimulateContentBefore.Size = new System.Drawing.Size(112, 21);
             this.txtSimulateContentBefore.TabIndex = 6;
@@ -105,7 +105,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 127);
+            this.label3.Location = new System.Drawing.Point(26, 72);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 12);
             this.label3.TabIndex = 7;
@@ -113,7 +113,7 @@
             // 
             // txtSimulateContentEnd
             // 
-            this.txtSimulateContentEnd.Location = new System.Drawing.Point(138, 160);
+            this.txtSimulateContentEnd.Location = new System.Drawing.Point(133, 105);
             this.txtSimulateContentEnd.Name = "txtSimulateContentEnd";
             this.txtSimulateContentEnd.Size = new System.Drawing.Size(112, 21);
             this.txtSimulateContentEnd.TabIndex = 8;
@@ -121,7 +121,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 163);
+            this.label4.Location = new System.Drawing.Point(26, 108);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 12);
             this.label4.TabIndex = 9;
@@ -131,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 266);
+            this.ClientSize = new System.Drawing.Size(678, 480);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtSimulateContentEnd);
             this.Controls.Add(this.label3);

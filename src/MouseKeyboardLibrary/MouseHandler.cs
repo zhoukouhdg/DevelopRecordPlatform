@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace OneKeyLogin
+namespace MouseKeyboardLibrary
 {
     public static class MouseHandler
     {
@@ -26,9 +26,19 @@ namespace OneKeyLogin
 
         }
 
-        public static void  MouseClick()
+        public static void MouseClick()
         {
             mouse_event(MouseHandler.MOUSEEVENTF_LEFTDOWN | MouseHandler.MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+        }
+
+        public static void MouseLeftDown(int dx, int dy)
+        {
+            mouse_event(MouseHandler.MOUSEEVENTF_LEFTDOWN, dx, dy, 0, 0);
+        }
+
+        public static void MouseLeftUp(int dx, int dy)
+        {
+            mouse_event(MouseHandler.MOUSEEVENTF_LEFTUP, dx, dy, 0, 0);
         }
     }
 }
