@@ -7,6 +7,9 @@ namespace OneKeyLogin
 {
     public class GameAccount
     {
+        /// <summary>
+        /// 是否登录
+        /// </summary>
         public bool IsLogin { get; set; }
 
         public string UserName { get; set; }
